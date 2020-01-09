@@ -4,4 +4,3 @@ Department of Computer Engineering & Informatics, University of Patras.
 Winter Semester: 2019-2020.
 Instructor: Sioutas Spyros.
 Student: Karamitsos Athanasios, Undergraduate Program, 9th Semester.
-
