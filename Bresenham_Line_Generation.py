@@ -19,28 +19,31 @@ def bresenham_line(x0, y0, x1, y1):
 
     dx = abs(x1-x0)
     dy = abs(y1-y0)
-    D = 2*dy - dx # Slope error
     y = y0
+    D = 2*dy - dx # Slope error
 
     px.append(x0)
     py.append(y0)
+    while x0 < x1+1:
 
-    for x in range(x0, x1+1):
-        xp.append(x)
-        yp.append(y)
-        # print("(",x ,",",y ,")\n")
+        plt.plot(x0, y, 'ro')
+
         if D > 0:
+            #plt.plot(x, y, 'ro')
             y = y + 1
             D = D - 2*dx
 
         D = D + 2*dy
+        x0 = x0 + 1
 
-    px.append(x)
+    #plt.plot(x1, y1, 'ro')
+
+    px.append(x0-1)
     py.append(y)
 
     plt.grid(linestyle='--') # Add some -- for visual clarity
     plt.plot(px, py, 'ro-')
-    plt.plot(xp, yp, 'ro')
+    #plt.plot(xp, yp, 'ro')
     plt.show()
 
-bresenham_line(1, 5, 6, 8) # Calling the function with 2 points
+bresenham_line(0, 1, 6, 4) # Calling the function with 2 points
