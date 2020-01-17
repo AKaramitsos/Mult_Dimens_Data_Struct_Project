@@ -24,26 +24,26 @@ def bresenham_line(x0, y0, x1, y1):
 
     px.append(x0)
     py.append(y0)
+
     while x0 < x1+1:
 
         plt.plot(x0, y, 'ro')
 
         if D > 0:
             #plt.plot(x, y, 'ro')
-            y = y + 1
+            if y != y1:
+                y = y + 1
             D = D - 2*dx
 
         D = D + 2*dy
-        x0 = x0 + 1
+        if x0 != x1:
+            x0 = x0 + 1
 
-    #plt.plot(x1, y1, 'ro')
-
-    px.append(x0-1)
+    px.append(x0)
     py.append(y)
 
-    plt.grid(linestyle='--') # Add some -- for visual clarity
-    plt.plot(px, py, 'ro-')
-    #plt.plot(xp, yp, 'ro')
+    plt.grid(linestyle='--') # Add some -- on the figure for visual clarity
+    plt.plot(px, py, 'ro-') # ro for red spheres as the points - for line
     plt.show()
 
 bresenham_line(0, 1, 6, 4) # Calling the function with 2 points
